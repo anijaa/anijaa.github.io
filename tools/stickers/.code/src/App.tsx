@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Button, Divider, Form, Grid, Header, Icon, Ref, Segment, TextArea } from 'semantic-ui-react';
+import { Button, Divider, Form, Grid, Header, Icon, Ref, Segment, TextArea, Responsive } from 'semantic-ui-react';
 import Page from './Page';
 
 type Props = React.Props<any>;
@@ -28,7 +28,7 @@ function App({ ...props }: Props) {
             </Header>
             <Segment raised>
                 <Grid columns={2} relaxed="very" stackable>
-                    <Grid.Column>
+                    <Grid.Column verticalAlign="middle">
                         <Form>
                             <Ref innerRef={inputRef}>
                                 <Form.Field id="form-input-control-sticker-manager" control={TextArea} label="Sticker Manager Format" placeholder="e.g. [1] [2] [5]" rows={10} />
@@ -52,9 +52,14 @@ function App({ ...props }: Props) {
                     </Grid.Column>
                 </Grid>
 
-                <Divider vertical>
-                    <Icon name="angle double right" />
-                </Divider>
+                <Responsive
+                    minWidth={768}
+                    as={() => (
+                        <Divider vertical>
+                            <Icon name="angle double right" />
+                        </Divider>
+                    )}
+                ></Responsive>
             </Segment>
         </Page>
     );
