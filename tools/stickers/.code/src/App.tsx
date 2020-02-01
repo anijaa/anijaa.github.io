@@ -4,7 +4,7 @@ import Page from './Page';
 
 type Props = React.Props<any>;
 
-const regex = /\[(\d+)\]/g;
+const regex = /\[([A-Z0-9]+)\]/g;
 
 function convert(input: string) {
     const result: string[] = [];
